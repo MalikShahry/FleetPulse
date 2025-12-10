@@ -1,0 +1,89 @@
+# =============================
+# Visual Studio / .NET
+# =============================
+.vs/
+*.user
+*.suo
+*.sln.docstates
+*.cache
+*.log
+*.db
+*.db-shm
+*.db-wal
+
+# Build results
+bin/
+obj/
+Debug/
+Release/
+x64/
+x86/
+[Aa][Rr][Mm]/
+[Aa][Rr][Mm]64/
+
+# Publish output
+publish/
+out/
+
+# =============================
+# ASP.NET / Razor / Blazor
+# =============================
+ScaffoldingReadMe.txt
+wwwroot/node_modules/
+wwwroot/dist/
+*.ts
+*.js.map
+
+# =============================
+# Entity Framework
+# =============================
+Migrations/
+
+# =============================
+# Rider / JetBrains IDEs
+# =============================
+.idea/
+
+# =============================
+# VS Code
+# =============================
+.vscode/
+.history/
+
+# =============================
+# OS Generated Files
+# =============================
+Thumbs.db
+Desktop.ini
+.DS_Store
+$RECYCLE.BIN/
+
+# =============================
+# NuGet Packages
+# =============================
+*.nupkg
+*.snupkg
+packages/
+!packages/build/
+packages/repositories.config
+
+# =============================
+# Node / Frontend
+# =============================
+node_modules/
+*.log
+
+# =============================
+# Test Results
+# =============================
+TestResults/
+*.coverage
+*.coveragexml
+
+# =============================
+# Security / Secrets
+# =============================
+*.key
+*.pem
+*.pfx
+secrets.json

@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "dgSpecHash": "0Wubr6YtCXs=",
+  "success": true,
+  "projectFilePath": "C:\\Users\\Shahry\\Desktop\\Gateway\\comp sci\\projects\\FleetPulse\\src\\FleetPulse.Api\\FleetPulse.Api.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Shahry\\.nuget\\packages\\microsoft.aspnetcore.openapi\\10.0.1\\microsoft.aspnetcore.openapi.10.0.1.nupkg.sha512",
+    "C:\\Users\\Shahry\\.nuget\\packages\\microsoft.openapi\\2.0.0\\microsoft.openapi.2.0.0.nupkg.sha512"
+  ],
+  "logs": []
+}
