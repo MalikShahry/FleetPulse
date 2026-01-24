@@ -1,0 +1,58 @@
+﻿@page
+@model IndexModel
+
+
+
+<div id="map" style="height:600px;"></div>
+
+<head>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/microsoft-signalr/7.0.0/signalr.min.js"></script>
+</head>
+<script>
+    // Initial map
+    var map = L.map('map').setView([51.045, -114.057], 13);
+
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png')
+        .addTo(map);
+
+    
+
+    var markers = {};
+
+     // 🔴 Marker style (defined ONCE)
+    function createVehicleMarker(lat, lng) {
+        return L.circleMarker([lat, lng], {
+            radius: 14,
+            color: '#007bff',
+            fillColor: '#007bff',
+            fillOpacity: 0.8
+        });
+    }
+
+    // Connect to SignalR Hub
+    const connection = new signalR.HubConnectionBuilder()
+        .withUrl("http://localhost:5035/hubs/location")
+        .build();
+
+    connection.on("LocationUpdated", (vehicleId, lat, lng) => {
+        console.log("Update received:", vehicleId, lat, lng);
+
+        if (!markers[vehicleId]) {
+            markers[vehicleId] = createVehicleMarker(lat, lng).addTo(map);
+
+        } else {
+            markers[vehicleId].setLatLng([lat, lng]);
+        }
+    });
+
+    connection.start()
+    .then(() => {
+        console.log("SignalR connected");
+
+        // TEMP: test marker on map
+        createVehicleMarker(51.045, -114.057).addTo(map);
+    })
+    .catch(err => console.error("SignalR error", err));
+</script>
