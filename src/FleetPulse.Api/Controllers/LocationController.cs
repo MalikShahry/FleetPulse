@@ -30,7 +30,7 @@ namespace FleetPulse.Api.Controllers
             
             // broadcast update
             await _hub.Clients.All.SendAsync(
-                "Location Updated",
+                "LocationUpdated",
                 id,
                 location.Latitude,
                 location.Longitude,
