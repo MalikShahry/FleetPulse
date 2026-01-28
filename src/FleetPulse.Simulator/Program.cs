@@ -6,8 +6,9 @@ var client = new HttpClient { BaseAddress = new Uri("http://localhost:5035/") };
 
 var rand = new Random();
 
-double latitude = 47.6205;
-double longitude = -122.3493;
+
+double latitude = 51.045;
+double longitude = -114.057;
 
 
 while (true)
